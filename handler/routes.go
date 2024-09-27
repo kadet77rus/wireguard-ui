@@ -481,6 +481,10 @@ func NewClient(db store.IStore) echo.HandlerFunc {
 			}
 		}
 
+		if client.FriendlyName == "" {
+			client.FriendlyName = client.Name + "-" + client.ID
+		}
+
 		if client.PresharedKey == "" {
 			presharedKey, err := wgtypes.GenerateKey()
 			if err != nil {
