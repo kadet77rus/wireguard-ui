@@ -923,6 +923,7 @@ func Status(db store.IStore) echo.HandlerFunc {
 		Connected         bool
 		AllocatedIP       string
 		Endpoint          string
+		FriendlyName      string
 	}
 
 	type DeviceVM struct {
@@ -993,6 +994,7 @@ func Status(db store.IStore) echo.HandlerFunc {
 					if _client, ok := m[pVm.PublicKey]; ok {
 						pVm.Name = _client.Name
 						pVm.Email = _client.Email
+						pVm.FriendlyName = _client.FriendlyName
 					}
 					devVm.Peers = append(devVm.Peers, pVm)
 				}
