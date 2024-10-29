@@ -27,8 +27,7 @@ jobs:
       - name: Prepare image tags
         id: image-tags
         run: |
-          # base=ngoduykhanh/wireguard-ui
-          base=kadet77rus/wireguard-ui
+          base=ngoduykhanh/wireguard-ui
           app_version=dev
 
           ## Set git tag as image tag
